@@ -8,4 +8,8 @@ public class CollectionHandler {
     public GamesCollection getCollectionByName(String collectionName){
         return null;
     }
+
+    public GamesCollection getCollectionByNameSorted(String collectionName, SortType sortType){
+        return null;
+    }
 }
