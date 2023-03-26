@@ -32,12 +32,10 @@ public class GameCollectionElementEntity {
 
     public GameCollectionElementEntity() {}
 
-    public GameCollectionElementEntity(Long id, boolean completed, GameEntity gameEntity, PlatformEntity platformEntity, GamesCollectionEntity gamesCollectionEntity) {
-        this.id = id;
+    public GameCollectionElementEntity(boolean completed, GameEntity gameEntity, PlatformEntity platformEntity) {
         this.completed = completed;
         this.gameEntity = gameEntity;
         this.platformEntity = platformEntity;
-        this.gamesCollectionEntity = gamesCollectionEntity;
     }
 
     public Long getId() {
