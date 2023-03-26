@@ -21,9 +21,9 @@ public class PlatformEntity {
     private Set<GameEntity> gameEntities;
 
     public PlatformEntity() {}
-    public PlatformEntity(Long id, String platformName) {
-        this.id = id;
+    public PlatformEntity(String platformName, Set<GameEntity> gameEntities) {
         this.platformName = platformName;
+        this.gameEntities = gameEntities;
     }
 
     public Long getId() {

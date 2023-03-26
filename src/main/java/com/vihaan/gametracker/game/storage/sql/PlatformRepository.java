@@ -1,4 +1,4 @@
-package com.vihaan.gametracker.game.storage;
+package com.vihaan.gametracker.game.storage.sql;
 
 import com.vihaan.gametracker.game.storage.sql.model.PlatformEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

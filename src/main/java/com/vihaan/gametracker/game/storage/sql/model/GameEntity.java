@@ -27,8 +27,7 @@ public class GameEntity {
     private Set<PlatformEntity> availablePlatformEntities;
 
     public GameEntity() {}
-    public GameEntity(Long id, String gameTitle, Set<PlatformEntity> availablePlatformEntities) {
-        this.id = id;
+    public GameEntity(String gameTitle, Set<PlatformEntity> availablePlatformEntities) {
         this.gameTitle = gameTitle;
         this.availablePlatformEntities = availablePlatformEntities;
     }
