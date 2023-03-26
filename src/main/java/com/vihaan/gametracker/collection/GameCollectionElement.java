@@ -5,13 +5,13 @@ import com.vihaan.gametracker.game.Platform;
 
 import java.util.Objects;
 
-public record GameCollectionEntry(Game game, Platform platform, boolean completionStatus) {
+public record GameCollectionElement(Game game, Platform platform, boolean completionStatus) {
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        GameCollectionEntry that = (GameCollectionEntry) o;
+        GameCollectionElement that = (GameCollectionElement) o;
         return completionStatus == that.completionStatus && Objects.equals(game, that.game) && Objects.equals(platform, that.platform);
     }
 

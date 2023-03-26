@@ -3,7 +3,7 @@ package com.vihaan.gametracker.collection;
 import java.util.List;
 import java.util.Objects;
 
-public record GamesCollection(String name, List<GameCollectionEntry> games) {
+public record GamesCollection(String name, List<GameCollectionElement> games) {
 
     @Override
     public boolean equals(Object o) {
