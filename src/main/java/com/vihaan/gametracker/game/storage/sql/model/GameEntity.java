@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "games")
-public class Game {
+public class GameEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,13 +24,13 @@ public class Game {
                     referencedColumnName = "id_game")},
             inverseJoinColumns = {@JoinColumn(name = "platform_id",
                 referencedColumnName = "id_platform")})
-    private Set<Platform> availablePlatforms;
+    private Set<PlatformEntity> availablePlatformEntities;
 
-    public Game() {}
-    public Game(Long id, String gameTitle, Set<Platform> availablePlatforms) {
+    public GameEntity() {}
+    public GameEntity(Long id, String gameTitle, Set<PlatformEntity> availablePlatformEntities) {
         this.id = id;
         this.gameTitle = gameTitle;
-        this.availablePlatforms = availablePlatforms;
+        this.availablePlatformEntities = availablePlatformEntities;
     }
 
     public Long getId() {
@@ -49,25 +49,25 @@ public class Game {
         this.gameTitle = gameTitle;
     }
 
-    public Set<Platform> getAvailablePlatforms() {
-        return availablePlatforms;
+    public Set<PlatformEntity> getAvailablePlatforms() {
+        return availablePlatformEntities;
     }
 
-    public void setAvailablePlatforms(Set<Platform> availablePlatforms) {
-        this.availablePlatforms = availablePlatforms;
+    public void setAvailablePlatforms(Set<PlatformEntity> availablePlatformEntities) {
+        this.availablePlatformEntities = availablePlatformEntities;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Game game = (Game) o;
-        return Objects.equals(gameTitle, game.gameTitle) && Objects.equals(availablePlatforms, game.availablePlatforms);
+        GameEntity gameEntity = (GameEntity) o;
+        return Objects.equals(gameTitle, gameEntity.gameTitle) && Objects.equals(availablePlatformEntities, gameEntity.availablePlatformEntities);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(gameTitle, availablePlatforms);
+        return Objects.hash(gameTitle, availablePlatformEntities);
     }
 
     @Override
@@ -75,7 +75,7 @@ public class Game {
         return "Game{" +
                 "id=" + id +
                 ", gameTitle='" + gameTitle + '\'' +
-                ", availablePlatforms=" + availablePlatforms +
+                ", availablePlatforms=" + availablePlatformEntities +
                 '}';
     }
 }

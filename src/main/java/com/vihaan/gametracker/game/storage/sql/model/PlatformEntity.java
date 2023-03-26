@@ -7,7 +7,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "platforms")
-public class Platform {
+public class PlatformEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +18,10 @@ public class Platform {
     private String platformName;
 
     @ManyToMany(mappedBy = "availablePlatforms")
-    private Set<Game> games;
+    private Set<GameEntity> gameEntities;
 
-    public Platform() {}
-    public Platform(Long id, String platformName) {
+    public PlatformEntity() {}
+    public PlatformEntity(Long id, String platformName) {
         this.id = id;
         this.platformName = platformName;
     }
@@ -42,20 +42,20 @@ public class Platform {
         this.platformName = platformName;
     }
 
-    public Set<Game> getGames() {
-        return games;
+    public Set<GameEntity> getGames() {
+        return gameEntities;
     }
 
-    public void setGames(Set<Game> games) {
-        this.games = games;
+    public void setGames(Set<GameEntity> gameEntities) {
+        this.gameEntities = gameEntities;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Platform platform = (Platform) o;
-        return Objects.equals(platformName, platform.platformName);
+        PlatformEntity platformEntity = (PlatformEntity) o;
+        return Objects.equals(platformName, platformEntity.platformName);
     }
 
     @Override

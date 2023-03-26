@@ -7,7 +7,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "games_collections")
-public class GamesCollection {
+public class GamesCollectionEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,10 +18,10 @@ public class GamesCollection {
     private String collectionName;
 
     @OneToMany(mappedBy = "gamesCollection")
-    private List<GameCollectionElement> games;
+    private List<GameCollectionElementEntity> games;
 
-    public GamesCollection() {}
-    public GamesCollection(Long id, String collectionName, List<GameCollectionElement> games) {
+    public GamesCollectionEntity() {}
+    public GamesCollectionEntity(Long id, String collectionName, List<GameCollectionElementEntity> games) {
         this.id = id;
         this.collectionName = collectionName;
         this.games = games;
@@ -43,11 +43,11 @@ public class GamesCollection {
         this.collectionName = collectionName;
     }
 
-    public List<GameCollectionElement> getGames() {
+    public List<GameCollectionElementEntity> getGames() {
         return games;
     }
 
-    public void setGames(List<GameCollectionElement> games) {
+    public void setGames(List<GameCollectionElementEntity> games) {
         this.games = games;
     }
 
@@ -55,7 +55,7 @@ public class GamesCollection {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        GamesCollection that = (GamesCollection) o;
+        GamesCollectionEntity that = (GamesCollectionEntity) o;
         return Objects.equals(collectionName, that.collectionName) && Objects.equals(games, that.games);
     }
 
