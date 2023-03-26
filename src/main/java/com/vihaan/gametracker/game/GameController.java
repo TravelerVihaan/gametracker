@@ -1,7 +1,9 @@
 package com.vihaan.gametracker.game;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController("/games")
 public class GameController {
+
+
 }

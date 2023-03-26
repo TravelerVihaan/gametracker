@@ -21,8 +21,7 @@ public class GamesCollectionEntity {
     private List<GameCollectionElementEntity> games;
 
     public GamesCollectionEntity() {}
-    public GamesCollectionEntity(Long id, String collectionName, List<GameCollectionElementEntity> games) {
-        this.id = id;
+    public GamesCollectionEntity(String collectionName, List<GameCollectionElementEntity> games) {
         this.collectionName = collectionName;
         this.games = games;
     }
