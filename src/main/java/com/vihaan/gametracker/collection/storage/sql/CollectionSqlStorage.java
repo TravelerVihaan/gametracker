@@ -8,14 +8,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CollectionStorage {
+public class CollectionSqlStorage {
 
     private final GamesCollectionRepository gamesCollectionRepository;
     private final ModelElementMapper<GamesCollection, GamesCollectionEntity> gamesCollectionMapper;
 
     @Autowired
-    public CollectionStorage(GamesCollectionRepository gamesCollectionRepository,
-                             ModelElementMapper<GamesCollection, GamesCollectionEntity> gamesCollectionMapper) {
+    public CollectionSqlStorage(GamesCollectionRepository gamesCollectionRepository,
+                                ModelElementMapper<GamesCollection, GamesCollectionEntity> gamesCollectionMapper) {
         this.gamesCollectionRepository = gamesCollectionRepository;
         this.gamesCollectionMapper = gamesCollectionMapper;
     }

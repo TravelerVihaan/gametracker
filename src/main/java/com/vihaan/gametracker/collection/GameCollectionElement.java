@@ -2,10 +2,12 @@ package com.vihaan.gametracker.collection;
 
 import com.vihaan.gametracker.game.Game;
 import com.vihaan.gametracker.game.Platform;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.Objects;
 
-public record GameCollectionElement(Game game, Platform platform, boolean completionStatus, String collectionName) {
+public record GameCollectionElement(@NotNull Game game, @NotNull Platform platform, boolean completionStatus, @NotNull @NotBlank String collectionName) {
 
     @Override
     public boolean equals(Object o) {
