@@ -1,9 +1,14 @@
 package com.vihaan.gametracker.collection;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
 public record GamesCollection(String name, List<GameCollectionElement> games) {
+
+    public static GamesCollection emptyGamesCollection(){
+        return new GamesCollection("EMPTY", Collections.emptyList());
+    }
 
     @Override
     public boolean equals(Object o) {
