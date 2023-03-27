@@ -33,12 +33,13 @@ public class GameCollectionElementMapper implements ModelElementMapper<GameColle
     public GameCollectionElementEntity convertToEntity(GameCollectionElement domainObject) {
         GameEntity gameEntity = gameMapper.convertToEntity(domainObject.game());
         PlatformEntity platformEntity = platformMapper.convertToEntity(domainObject.platform());
+        //TODO getCollectionByNameFromStorage
         return new GameCollectionElementEntity(domainObject.completionStatus(), gameEntity, platformEntity);
     }
 
     @Override
     public GameCollectionElement convertToDomainObject(GameCollectionElementEntity entityObject) {
         Game game = gameMapper.convertToDomainObject(entityObject.getGame());
-        return new GameCollectionElement(game, Platform.valueOf(entityObject.getPlatform().getPlatformName()), entityObject.isCompleted());
+        return new GameCollectionElement(game, Platform.valueOf(entityObject.getPlatform().getPlatformName()), entityObject.isCompleted(), entityObject.getGamesCollection().getCollectionName());
     }
 }
